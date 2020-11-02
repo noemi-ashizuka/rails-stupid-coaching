@@ -1,5 +1,12 @@
-<%= params[:question] %>
+<div class="my-3">
+  <blockquote class="blockquote">
+    <h3><%= params[:question] %></h3>
+  </blockquote>
+  <blockquote class="blockquote">
+    <h1><%= @answer %></h1>
+  </blockquote>
+</div>
 
-<%= @answer %>
-
-<%= link_to "Ask another question", "/ask" %>
+<div class="my-3">
+  <%= link_to "Ask another question", "/ask" %>
+</div>

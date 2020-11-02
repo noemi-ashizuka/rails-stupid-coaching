@@ -4,11 +4,14 @@ class QuestionsController < ApplicationController
 
   def answer
     # use params
+    @question = params[:question]
     
-    @answer = if params[:question] == "I am going to work"
+    @answer = if @question.downcase == "i am going to work"
                 "Great!"
-              elsif params[:question].end_with?("?")
+              elsif @question.end_with?("?")
                 "Silly question, get dressed and go to work!"
+              elsif @question.blank?
+                "I can't hear you..."
               else
                 "I don't care, get dressed and go to work!"
               end
